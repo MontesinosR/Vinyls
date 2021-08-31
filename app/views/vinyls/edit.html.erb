@@ -1,0 +1,18 @@
+<div class="container">
+  <%= simple_form_for @vinyl do |f| %>
+    <h2>Edit this vinyl's settings</h2>
+    <h3>Album info</h3>
+    <%= f.input :album_name %>
+    <%= f.input :artist %>
+    <%= f.select :genre, collection: Vinyl::GENRES %>
+    <%= f.input :description %>
+    <%= f.input :photo, as: :file %>
+    <h3>Rental info</h3>
+    <%= f.select :condition, collection: Vinyl::CONDITION %>
+    <%= f.input :daily_rate %>
+    <%= f.submit %>
+  <% end %>
+  <%= link_to vinyl_path(@vinyl), method: :delete do %>
+    <div class="button">Delete</div>
+  <% end %>
+</div>
