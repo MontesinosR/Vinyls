@@ -1,10 +1,18 @@
 .navbar-lewagon {
   justify-content: space-between;
   align-items: center;
-   background: white;
+  background: white;
+  padding: 20px 20px;
   .fas {
     font-size: 34px;
-    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .avatar {
+    margin-right: 20px;
+    margin-left: 30px;
+  }
+  .dropdown-item {
+    color: black;
   }
 }
 .home-nav {
@@ -15,6 +23,9 @@
   z-index: 1;
   a {
     color:white !important;
+  }
+  .dropdown-item {
+    color: black !important;
   }
 }
 .navbar-lewagon .navbar-collapse {
