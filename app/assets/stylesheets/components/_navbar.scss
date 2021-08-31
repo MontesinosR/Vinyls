@@ -1,8 +1,22 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  align-items: center;
+   background: white;
+  .fas {
+    font-size: 34px;
+    margin-left: 20px;
+  }
 }
-
+.home-nav {
+  position: fixed;
+  width: 100vw;
+  background: transparent;
+  color: white;
+  z-index: 1;
+  a {
+    color:white !important;
+  }
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
