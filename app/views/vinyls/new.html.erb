@@ -1,15 +1,21 @@
+<div class="form-background" >
 <div class="form-container">
-  <%= simple_form_for @vinyl do  |f| %>
-    <h2>Add a vinyl to your collection</h2>
-    <h3>Album info</h3>
-    <%= f.input :album_name %>
-    <%= f.input :artist %>
-    <%= f.input :description %>
-    <%= f.select :genre, collection: Vinyl::GENRES %>
-    <%= f.input :photo, as: :file %>
-    <h3>Rental info</h3>
-    <%= f.select :condition, collection: Vinyl::CONDITION %>
-    <%= f.input :daily_rate %>
-    <%= f.submit %>
+  <%= simple_form_for @vinyl do |f| %>
+    <div class="form-header">
+      <h2>Add a vinyl to your collection</h2>
+    </div>
+    <div class="form-body">
+      <h3>Album info</h3>
+      <%= f.input :album_name, label: false, placeholder: "Album name" %>
+      <%= f.input :artist, label: false, placeholder: "Artist" %>
+      <%= f.input :description, label: false, placeholder: "Description" %>
+      <%= f.select :genre, Vinyl::GENRES, prompt: " Genre" %>
+      <%= f.input :photo, as: :file, input_html: { class: 'd-none'}, label_html: { class: 'upload-photo'}, label: "  Upload album cover" %>
+      <h3>Rental info</h3>
+      <%= f.select :condition, Vinyl::CONDITION, prompt: ' Condition' %>
+      <%= f.input :daily_rate, input_html: { class: "price-input" }, label: false, placeholder: "Daily rental rate (€)" %>
+      <%= f.button :submit, "Add vinyl to collection", label_html: { class: "button" } %>
+    </div>
   <% end %>
+</div>
 </div>
