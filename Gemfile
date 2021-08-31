@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Added by us
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.16.0'
 ############
 
 # Reduces boot times through caching; required in config/boot.rb
