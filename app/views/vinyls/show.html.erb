@@ -1,0 +1,47 @@
+
+<%# Import navbar partial %>
+
+<%# Mine  %>
+<div class = "wrapper">
+
+  <div class = "info-container">
+    <div class = "info-card">
+      <div class = "card-and-title">
+        <h3 class = "album-name"><%= @vinyl.album_name %></h3>
+        <img src = "https://images-na.ssl-images-amazon.com/images/I/91ksS-ioRpL._SL1500_.jpg" >
+      </div>
+
+      <div class = "info-card-text">
+        <p><strong> Artist</strong> <%= @vinyl.artist %> </p>
+        <p> <strong> Genre </strong> <%= @vinyl.genre %> </p>
+        <p> <strong> Condition </strong> <%= @vinyl.condition %> </p>
+        <div class = "card-desc">
+          <p> <strong> Description </strong> </p>
+        </div>
+        <p> <%= @vinyl.description %> </p>
+      </div>
+    </div>
+
+    <div class = "request-rent-form">
+      <h3> Rent this vinyl </h3>
+      <p> Daily rate: $<%= @vinyl.daily_rate %> </p>
+      <p> Start date: </p>
+      <p class = "calendar-placeholder"> Click here </p>
+      <p> End date: </p>
+      <p class = "calendar-placeholder"> Click here </p>
+      <div class = "button-div">
+        <%= link_to "Request rental", "#", class: "btn-small" %>
+      </div>
+     <%# <%= simple_form_for (@vinyl) do |f| %>
+        <%# <%= f.input :start_date, start_year: Date.today.year,
+          end_year: Date.today.year + 2, discard_day: true, %>
+          <%# order: [:month, :year] %>
+
+        <%# <%= f.input :end_date, start_year: Date.today.year,
+          end_year: Date.today.year + 2, discard_day: true,
+          order: [:month, :year] %>
+          <%# <%= f.submit "Request rental", class: "btn-small" %>
+     <%# <% end %>
+    </div>
+  </div>
+</div>
