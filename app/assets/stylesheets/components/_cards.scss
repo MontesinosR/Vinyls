@@ -1,23 +1,24 @@
 h1 {
   position: relative;
   align-items: center;
-  padding: 10px;
   color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 input {
   padding: 5px;
-  margin: 10px;
 }
 
 .vinyl-wrapper {
   display: flex;
-  background-color: #eaece3;
+  background-color: #F4F4F4;
 
 }
 
 .container {
   max-width: 1100px;
+  margin: 20px;
 }
 
 .card-vinyl {
@@ -27,7 +28,8 @@ input {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 16px;
+  border-radius: 4px;
 }
 
 .card-vinyl img {
