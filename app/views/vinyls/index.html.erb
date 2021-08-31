@@ -1,0 +1,27 @@
+
+<div class="vinyl-wrapper">
+  <!--Hacer que estén en un .container que ocupe 8/12 columns-->
+  <!--Searchbar-->
+  <div class="container">
+    <input type="text" placeholder="Search..">
+    <h1>Vinyls near you...</h1>
+    <% @vinyls.each do |vinyl| %>
+    <div class="card-vinyl">
+      <img src="https://images-na.ssl-images-amazon.com/images/I/81pe85y7VjL._AC_SL1500_.jpg" />
+      <div class="card-vinyl-info">
+        <h2 id="album-name"><%= link_to vinyl.album_name, "#" %></h2>
+        <p>Artist: <%= vinyl.artist %></p>
+        <p>Description: <%= vinyl.description %></strong> only.</p>
+        <p>Condition: <%= vinyl.condition %></p>
+        <p>Genre: <%= vinyl.genre %></p>
+        <p>Daily rate <%= vinyl.daily_rate %>$</p>
+      </div>
+    </div>
+    <% end %>
+
+    <!-- Map picture. Conseguir que ocupe el resto de columnas a la derecha de las cards.-->
+  </div>
+   <div class="map">
+      <img src="http://www.techautos.com/wp-content/uploads/2010/12/Map-City.jpg" alt="map image">
+    </div>
+</div>

@@ -1,4 +1,8 @@
 class VinylsController < ApplicationController
+  def index
+    @vinyls = Vinyl.all
+  end
+  
   def new
     @vinyl = Vinyl.new
   end

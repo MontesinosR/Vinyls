@@ -1,0 +1,66 @@
+h1 {
+  position: relative;
+  align-items: center;
+  color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+input {
+  padding: 5px;
+}
+
+.vinyl-wrapper {
+  display: flex;
+  background-color: #F4F4F4;
+
+}
+
+.container {
+  max-width: 1100px;
+  margin: 20px;
+}
+
+.card-vinyl {
+  background-color: white;
+  overflow: hidden;
+  height: 185px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  border-radius: 4px;
+}
+
+.card-vinyl img {
+  height: 185px;
+  width: 185px;
+  object-fit: cover;
+}
+
+.card-vinyl h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-vinyl p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-vinyl .card-vinyl-info {
+  padding: 16px;
+}
+
+.map {
+  height: 100vh;
+  position: sticky;
+}
+
+#album-name {
+  color: white;
+}
