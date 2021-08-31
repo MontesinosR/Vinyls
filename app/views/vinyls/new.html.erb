@@ -1,0 +1,15 @@
+<div class="form-container">
+  <%= simple_form_for @vinyl do  |f| %>
+    <h2>Add a vinyl to your collection</h2>
+    <h3>Album info</h3>
+    <%= f.input :album_name %>
+    <%= f.input :artist %>
+    <%= f.input :description %>
+    <%= f.select :genre, collection: Vinyl::GENRES %>
+    <%= f.input :photo, as: :file %>
+    <h3>Rental info</h3>
+    <%= f.select :condition, collection: Vinyl::CONDITION %>
+    <%= f.input :daily_rate %>
+    <%= f.submit %>
+  <% end %>
+</div>

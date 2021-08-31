@@ -1,0 +1,28 @@
+
+.navbar-lewagon {
+  justify-content: space-between;
+  align-items: center;
+   background: white;
+  .fas {
+    font-size: 34px;
+    margin-left: 20px;
+  }
+}
+.home-nav {
+  position: fixed;
+  width: 100vw;
+  background: transparent;
+  color: white;
+  z-index: 1;
+  a {
+    color:white !important;
+  }
+}
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+

@@ -63,3 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Added by me
 gem 'devise'
+
+#Cloudinary
+gem 'cloudinary', '~> 1.16.0'
