@@ -8,9 +8,9 @@ class Vinyl < ApplicationRecord
   validates :album_name, presence: true
   validates :artist, presence: true
   validates :description, presence: true
-  validates :condition, presence: true,
+  validates :condition, presence: true
   validates :genre, presence: true
-  validates :daily_rate, presence: true, numericality: { :greater_than: 0 }
+  validates :daily_rate, presence: true, numericality: { greater_than: 0 }
   validates :genre, inclusion: { in: GENRES }
   validates :condition, inclusion: { in: CONDITION }
 
