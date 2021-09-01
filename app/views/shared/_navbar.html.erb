@@ -21,8 +21,7 @@
             <%= link_to "Dashboard", "#", class: "dropdown-item" %>
             <%= link_to "My profile", "#", class: "dropdown-item" %>
             <%= link_to "Settings", "#", class: "dropdown-item" %>
-            <!-- This las link should log the user out -->
-            <%= link_to "Logout", "#", class: "dropdown-item" %>
+            <%= link_to "Logout", destroy_user_session_path, class: "dropdown-item", method: :delete %>
           </div>
         </li>
       <% end %>

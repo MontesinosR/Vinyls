@@ -46,7 +46,7 @@
   border-radius: 4px;
   padding: 30px;
   margin: 20px;
-  height: 400px;
+  height: 429px;
   width: 41%;
 }
 
@@ -56,6 +56,7 @@
   border-radius: 4px;
   padding: 16px;
   text-decoration: none;
+  font-weight: normal;
 }
 
 .button-div {
@@ -85,4 +86,12 @@
 
 .card-desc {
   margin-bottom: -15px;
+}
+
+.datepicker-label {
+  font-size: 16px;
+}
+
+.flatpickr-input[readonly] {
+    border: 1px solid lightgray;
 }
