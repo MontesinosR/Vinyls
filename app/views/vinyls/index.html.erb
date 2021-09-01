@@ -18,7 +18,8 @@
     <div class="card-vinyl">
       <img src="https://images-na.ssl-images-amazon.com/images/I/81pe85y7VjL._AC_SL1500_.jpg" />
       <div class="card-vinyl-info">
-        <h2><%= link_to vinyl.album_name, "#", class: "album-name" %></h2>
+        <!-- Pending merge to test if the path is right -->
+        <h2><%= link_to vinyl.album_name, vinyl_path(vinyl), class: "album-name" %></h2>
         <p>Artist: <%= vinyl.artist %></p>
         <p>Description: <%= vinyl.description %></strong> only.</p>
         <p>Condition: <%= vinyl.condition %></p>
