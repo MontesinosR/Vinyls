@@ -2,9 +2,9 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @user = User.find(params[:user_id])
+    @user = current_user
     @booking.user = @user
-    @booking.status = "pending"
+    @booking.status = "Pending"
     if @booking.save
       redirect_to root_path
     else
