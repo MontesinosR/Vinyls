@@ -38,12 +38,6 @@ input {
   object-fit: cover;
 }
 
-.card-vinyl h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
 .card-vinyl p {
   font-size: 12px;
   line-height: 1.4;
@@ -61,8 +55,11 @@ input {
   position: sticky;
 }
 
-#album-name {
-  color: white;
+.album-name {
+  color: black !important;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
 }
 
 // Dashboard cards //

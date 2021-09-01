@@ -7,6 +7,7 @@
   .fas {
     font-size: 34px;
     margin-right: 20px;
+    color: black !important;
   }
   .avatar {
     margin-right: 20px;
@@ -36,3 +37,9 @@
   width: 40px;
 }
 
+.nav-link {
+  background-color: #569F85 ;
+  border-radius: 20px;
+  padding: 8px 18px !important;
+  color: white !important;
+}
