@@ -61,3 +61,56 @@ input {
   font-weight: bold;
   margin: 0;
 }
+
+// Dashboard cards //
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 230px;
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  height: 100px;
+
+}
+
+.booking-info {
+  display: flex;
+  width: 100%;
+
+  .card-trip-pricing {
+    width: 50%;
+    text-align: right;
+  }
+
+  .card-trip-dates {
+    width: 50%;
+  }
+}
