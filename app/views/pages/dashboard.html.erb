@@ -1,55 +1,100 @@
-<h1>Dashboard</h1>
+<div class="container">
+  <h1>Dashboard</h1>
 
-<ul class="nav nav-vinyl mb-3" id="vinyl-tab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="vinyl-bought-tab" data-toggle="pill" href="#vinyl-bought" role="tab" aria-controls="vinyl-bought" aria-selected="true">Bought</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="vinyl-sold-tab" data-toggle="pill" href="#vinyl-sold" role="tab" aria-controls="vinyl-sold" aria-selected="false">Sold</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="vinyl-owned-tab" data-toggle="pill" href="#vinyl-owned" role="tab" aria-controls="vinyl-owned" aria-selected="false">Owned</a>
-  </li>
-</ul>
-<div class="tab-content" id="vinyl-tabContent">
-  <div class="tab-pane fade show active" id="vinyl-bought" role="tabpanel" aria-labelledby="vinyl-bought-tab">
-    <h2>Pending</h2>
-    <ul>
-      <% @bookings_bought_pending.each do |booking| %>
-        <li><%= booking.vinyl.artist %> </li>
-      <% end %>
-    </ul>
-    <h2>Upcoming</h2>
-    <ul>
-      <% @bookings_bought_pending.each do |booking| %>
-        <li><%= booking.vinyl.artist %> </li>
-      <% end %>
-    </ul>
-    <h2>Completed</h2>
-    <ul>
-      <% @bookings_bought_pending.each do |booking| %>
-        <li><%= booking.vinyl.artist %> </li>
-      <% end %>
-    </ul>
-    <h2>Cancelled</h2>
-    <ul>
-      <% @bookings_bought_pending.each do |booking| %>
-        <li><%= booking.vinyl.artist %> </li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="tab-pane fade" id="vinyl-sold" role="tabpanel" aria-labelledby="vinyl-sold-tab">
-    <ul>
-      <% @bookings_sold_pending.each do |booking| %>
-        <li><%= booking.vinyl.artist %> </li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="tab-pane fade" id="vinyl-owned" role="tabpanel" aria-labelledby="vinyl-owned-tab">
-    <ul>
-      <% @vinyls_owned.each do |vinyl| %>
-        <li><%= vinyl.artist %> </li>
-      <% end %>
-    </ul>
+  <ul class="nav nav-vinyl mb-3" id="vinyl-tab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="vinyl-bought-tab" data-toggle="pill" href="#vinyl-bought" role="tab" aria-controls="vinyl-bought" aria-selected="true">Bought</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="vinyl-sold-tab" data-toggle="pill" href="#vinyl-sold" role="tab" aria-controls="vinyl-sold" aria-selected="false">Sold</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="vinyl-owned-tab" data-toggle="pill" href="#vinyl-owned" role="tab" aria-controls="vinyl-owned" aria-selected="false">Owned</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="vinyl-tabContent">
+    <div class="tab-pane fade show active" id="vinyl-bought" role="tabpanel" aria-labelledby="vinyl-bought-tab">
+      <h2>Pending</h2>
+      <div class="wrapper">
+        <% @bookings_bought_pending.each do |booking| %>
+            <%= link_to vinyl_path(booking.vinyl) do %>
+              <div class="card-trip">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/91ksS-ioRpL._SL1500_.jpg" />
+                <div class="card-trip-infos">
+                  <div class="card-trip-text">
+                    <h2><strong><%= booking.vinyl.album_name %></strong> by <strong><%= booking.vinyl.artist %></strong></h2>
+                  </div>
+                  <div class="booking-info">
+                    <p class="card-trip-dates"><%= booking.start_date %> - <%= booking.end_date %></p>
+                    <h2 class="card-trip-pricing"> <%= booking.vinyl.daily_rate %> € </h2>
+                  </div>
+                </div>
+              </div>
+
+            <% end %>
+        <% end %>
+      </div>
+      <h2>Upcoming</h2>
+      <ul>
+        <% @bookings_bought_upcoming.each do |booking| %>
+          <li><%= booking.vinyl.artist %> </li>
+        <% end %>
+      </ul>
+      <h2>Completed</h2>
+
+        <% @bookings_bought_completed.each do |booking| %>
+          <%= link_to vinyl.album_name, "#" do %>
+            <div class="card-vinyl short">
+              <img src="https://images-na.ssl-images-amazon.com/images/I/81pe85y7VjL._AC_SL1500_.jpg" />
+              <div class="card-vinyl-info">
+                <p>Artist: <%= booking.vinyl.artist %></p>
+                <p>Description: <%= booking.vinyl.description %></strong> only.</p>
+                <p>Condition: <%= booking.vinyl.condition %></p>
+                <p>Genre: <%= booking.vinyl.genre %></p>
+                <p>Daily rate <%= booking.vinyl.daily_rate %>$</p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <h2>Cancelled</h2>
+      <ul>
+        <% @bookings_bought_cancelled.each do |booking| %>
+          <li><%= booking.vinyl.artist %> </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="tab-pane fade" id="vinyl-sold" role="tabpanel" aria-labelledby="vinyl-sold-tab">
+      <h2>Pending</h2>
+      <ul>
+        <% @bookings_sold_pending.each do |booking| %>
+          <li><%= booking.vinyl.artist %> </li>
+        <% end %>
+      </ul>
+      <h2>Upcoming</h2>
+      <ul>
+        <% @bookings_sold_upcoming.each do |booking| %>
+          <li><%= booking.vinyl.artist %> </li>
+        <% end %>
+      </ul>
+      <h2>Completed</h2>
+      <ul>
+        <% @bookings_sold_completed.each do |booking| %>
+          <li><%= booking.vinyl.artist %> </li>
+        <% end %>
+      </ul>
+      <h2>Cancelled</h2>
+      <ul>
+        <% @bookings_sold_cancelled.each do |booking| %>
+          <li><%= booking.vinyl.artist %> </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="tab-pane fade" id="vinyl-owned" role="tabpanel" aria-labelledby="vinyl-owned-tab">
+      <ul>
+        <% @vinyls_owned.each do |vinyl| %>
+          <li><%= vinyl.artist %> </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
