@@ -8,7 +8,11 @@ class VinylsController < ApplicationController
   end
 
   def index
-    @vinyls = Vinyl.all
+    if params["query"].present?
+      @vinyls = Vinyl.where("album_name @@ ?", params["query"])
+    else
+      @vinyls = Vinyl.all
+    end
   end
 
   def new
