@@ -1,12 +1,16 @@
 class VinylsController < ApplicationController
+
+    skip_before_action :authenticate_user!, only: [:show, :index]
   def show
     @vinyl = Vinyl.find(params[:id])
+    @booking = Booking.new
+    @user = current_user
   end
-  
+
   def index
     @vinyls = Vinyl.all
   end
-  
+
   def new
     @vinyl = Vinyl.new
   end
