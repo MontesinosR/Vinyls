@@ -28,8 +28,8 @@
       <%# datepicker %>
       <% if current_user %>
         <%= simple_form_for [@user, @booking], method: "get" do |f| %>
-        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :start_date, as: :string, required: false, label_html: {class: "datepicker-label"}, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, required: false, label_html: {class: "datepicker-label"}, input_html: {class: "datepicker"} %>
         <%= f.button :submit, "Request rental", class: "btn-small" %>
         <% end %>
       <% else %>

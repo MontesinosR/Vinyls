@@ -4,7 +4,7 @@ class VinylsController < ApplicationController
   def show
     @vinyl = Vinyl.find(params[:id])
     @booking = Booking.new
-    @user = current_user
+    @user = current_user || User.first
   end
 
   def index
