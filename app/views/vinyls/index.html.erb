@@ -3,13 +3,22 @@
   <!--Hacer que estén en un .container que ocupe 8/12 columns-->
   <!--Searchbar-->
   <div class="container">
-    <input type="text" placeholder="Search..">
+    <!-- Cambiado el searchbar por el de Alex - Main Page -->
+    <%= simple_form_for :search, url: vinyls_path, method: :get do |f| %>
+  <div class="search-form-control form-group">
+    <input class="form-control string required" value="<%= params["query"]%> "type="text" name="query" id="search_query" />
+    <button name="button" type="submit" id="form-button" class="btn-search">
+      <i class="fas fa-search"></i> Search
+    </button>
+  </div>
+<% end %>
     <h1>Vinyls near you...</h1>
+    <!-- Display of index cards -->
     <% @vinyls.each do |vinyl| %>
     <div class="card-vinyl">
       <img src="https://images-na.ssl-images-amazon.com/images/I/81pe85y7VjL._AC_SL1500_.jpg" />
       <div class="card-vinyl-info">
-        <h2 id="album-name"><%= link_to vinyl.album_name, "#" %></h2>
+        <h2><%= link_to vinyl.album_name, "#", class: "album-name" %></h2>
         <p>Artist: <%= vinyl.artist %></p>
         <p>Description: <%= vinyl.description %></strong> only.</p>
         <p>Condition: <%= vinyl.condition %></p>
@@ -19,7 +28,6 @@
     </div>
     <% end %>
 
-    <!-- Map picture. Conseguir que ocupe el resto de columnas a la derecha de las cards.-->
   </div>
    <div class="map">
       <img src="http://www.techautos.com/wp-content/uploads/2010/12/Map-City.jpg" alt="map image">

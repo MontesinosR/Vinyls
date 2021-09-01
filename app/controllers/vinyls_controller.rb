@@ -2,11 +2,15 @@ class VinylsController < ApplicationController
   def show
     @vinyl = Vinyl.find(params[:id])
   end
-  
+
   def index
-    @vinyls = Vinyl.all
+    if params["query"].present?
+      @vinyls = Vinyl.where("album_name @@ ?", params["query"])
+    else
+      @vinyls = Vinyl.all
+    end
   end
-  
+
   def new
     @vinyl = Vinyl.new
   end
