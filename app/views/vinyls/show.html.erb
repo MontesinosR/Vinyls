@@ -25,23 +25,18 @@
     <div class = "request-rent-form">
       <h3> Rent this vinyl </h3>
       <p> Daily rate: $<%= @vinyl.daily_rate %> </p>
-      <p> Start date: </p>
-      <p class = "calendar-placeholder"> Click here </p>
-      <p> End date: </p>
-      <p class = "calendar-placeholder"> Click here </p>
-      <div class = "button-div">
-        <%= link_to "Request rental", "#", class: "btn-small" %>
-      </div>
-     <%# <%= simple_form_for (@vinyl) do |f| %>
-        <%# <%= f.input :start_date, start_year: Date.today.year,
-          end_year: Date.today.year + 2, discard_day: true, %>
-          <%# order: [:month, :year] %>
+      <%# datepicker %>
+      <% if current_user %>
+        <%= simple_form_for [@user, @booking], method: "get" do |f| %>
+        <%= f.input :start_date, as: :string, required: false, label_html: {class: "datepicker-label"}, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, required: false, label_html: {class: "datepicker-label"}, input_html: {class: "datepicker"} %>
+        <%= f.button :submit, "Request rental", class: "btn-small" %>
+        <% end %>
+      <% else %>
+        <%= link_to "Request rental", new_user_session_path, class: "btn-small" %>
+      <% end %>
 
-        <%# <%= f.input :end_date, start_year: Date.today.year,
-          end_year: Date.today.year + 2, discard_day: true,
-          order: [:month, :year] %>
-          <%# <%= f.submit "Request rental", class: "btn-small" %>
-     <%# <% end %>
     </div>
+
   </div>
 </div>
