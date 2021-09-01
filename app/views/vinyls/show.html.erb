@@ -26,15 +26,14 @@
       <h3> Rent this vinyl </h3>
       <p> Daily rate: $<%= @vinyl.daily_rate %> </p>
       <%# datepicker %>
-      <% if current_user %>
-        <%= simple_form_for [@user, @booking], method: "get" do |f| %>
+
+      <%= simple_form_for [@vinyl, @booking] do |f| %>
+        <%# f.input :vinyl_id, @vinyl.id, as: :hidden %>
         <%= f.input :start_date, as: :string, required: false, label_html: {class: "datepicker-label"}, input_html: {class: "datepicker"} %>
         <%= f.input :end_date, as: :string, required: false, label_html: {class: "datepicker-label"}, input_html: {class: "datepicker"} %>
         <%= f.button :submit, "Request rental", class: "btn-small" %>
-        <% end %>
-      <% else %>
-        <%= link_to "Request rental", new_user_session_path, class: "btn-small" %>
       <% end %>
+
 
     </div>
 

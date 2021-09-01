@@ -31,9 +31,11 @@ class BookingsController < ApplicationController
     @user = current_user
     @booking = Booking.new(booking_params)
     @booking.user = @user
+    @vinyl = Vinyl.find(params[:vinyl_id])
+    @booking.vinyl = @vinyl
     @booking.status = "Pending"
     if @booking.save
-      redirect_to root_path
+      redirect_to user_bookings_path(current_user)
     else
       redirect_back fallback_location: vinyl_path(Vinyl.find(params[:id]))
     end
@@ -42,6 +44,6 @@ class BookingsController < ApplicationController
 
   private
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :vinyl)
   end
 end

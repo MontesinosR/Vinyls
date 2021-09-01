@@ -3,9 +3,11 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :vinyls
-
-  resources :users do
+  resources :vinyls do
     resources :bookings, only: [:create, :index]
+  end
+
+  resources :users, only: [] do
+    resources :bookings, only: :index
   end
 end
