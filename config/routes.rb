@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :vinyls
 
-  resources :bookings, only: [:create]
-  
+  resources :user do
+    resources :bookings, only: [:create]
+  end
 end

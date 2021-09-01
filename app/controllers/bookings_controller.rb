@@ -1,14 +1,14 @@
 class BookingsController < ApplicationController
 
   def create
-    @booking = Booking.new(booking_params)
     @user = current_user
+    @booking = Booking.new(booking_params)
     @booking.user = @user
     @booking.status = "Pending"
     if @booking.save
       redirect_to root_path
     else
-      render :new
+      redirect_back fallback_location: vinyl_path(Vinyl.find(params[:id]))
     end
   end
 
