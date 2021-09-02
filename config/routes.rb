@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :vinyls do
-    resources :bookings, only: [:create, :index]
+    # collection do
+     # patch :vinyl
+    # end
+    resources :bookings, only: [:create, :index, :update]
   end
 
   resources :users, only: [] do
