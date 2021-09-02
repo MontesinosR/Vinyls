@@ -6,15 +6,21 @@
   padding: 20px 20px;
   .fas {
     font-size: 34px;
-    margin-right: 20px;
+    margin-right: 30px;
     color: black !important;
   }
   .avatar {
-    margin-right: 20px;
-    margin-left: 30px;
+    margin-right: 30px;
+    margin-left: 40px;
   }
   .dropdown-item {
     color: black;
+  }
+  .nav-link {
+    background-color: #569F85 ;
+    border-radius: 20px;
+    padding: 8px 18px !important;
+    color: white !important;
   }
 }
 .home-nav {
@@ -35,11 +41,4 @@
 }
 .navbar-lewagon .navbar-brand img {
   width: 40px;
-}
-
-.nav-link {
-  background-color: #569F85 ;
-  border-radius: 20px;
-  padding: 8px 18px !important;
-  color: white !important;
 }
