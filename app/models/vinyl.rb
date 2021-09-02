@@ -1,6 +1,7 @@
 class Vinyl < ApplicationRecord
   GENRES = ['Classic Rock', 'Hip-Hop', 'Pop', 'Jazz', 'Disco', 'Reggaeton']
-  CONDITION = ['Mint Condition', 'Good', 'Okay', 'Worn']
+  CONDITION = ['Mint', 'Good', 'Okay', 'Worn']
+  PRICE_ORDER = ['Lowest to highest', 'Highest to lowest'] #just for filters, ignore
 
   belongs_to :user
   has_many :bookings

@@ -2,13 +2,27 @@
 <%# New %>
 <%= form_tag vinyls_path, method: :get do %>
 <div class = "search-form-control form-group">
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a vinyl"
-  %>
-  <%= button_tag(type: "submit", class: "btn-search") do %>
-    <i class="fas fa-search"></i> Search
-  <% end %>
+  <div class = "search-bar-div">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a vinyl",
+      value: params[:query]
+    %>
+  </div>
+  <div class = "search-filters-div">
+    <i class="fas fa-sliders-h"></i>
+    <p> Filters </p>
+    <%= select_tag :genre, options_for_select(Vinyl::GENRES, selected: params[:genre]), prompt: "Genre", class: "filter-pill filter-pill-genre"  %>
+    <%= select_tag :condition, options_for_select(Vinyl::CONDITION, selected: params[:condition] ), prompt: "Condition", class: "filter-pill filter-pill-condition"%>
+    <%= select_tag :order, options_for_select(Vinyl::PRICE_ORDER, params[:order] ), prompt: "Price", class: "filter-pill filter-pill-price"%>
+  </div>
+
+  <div class = "search-bar-button-div">
+    <%= button_tag(type: "submit", class: "btn-search") do %>
+      <i class="fas fa-search"></i> Search
+    <% end %>
+  </div>
+
 </div>
 <% end %>
