@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :customer_bookings, source: :bookings
-  has_many :vinyls
+  has_many :vinyls, dependent: :destroy
   has_many :owner_bookings, through: :vinyls, source: :bookings
 
   has_one_attached :avatar

@@ -1,8 +1,14 @@
-<%= simple_form_for :search, url: vinyls_path, method: :get do |f| %>
-  <div class="search-form-control form-group">
-    <input class="form-control string required" value="<%= params["query"]%> "type="text" name="query" id="search_query" />
-    <button name="button" type="submit" id="form-button" class="btn-search">
-      <i class="fas fa-search"></i> Search
-    </button>
-  </div>
+
+<%# New %>
+<%= form_tag vinyls_path, method: :get do %>
+<div class = "search-form-control form-group">
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a vinyl"
+  %>
+  <%= button_tag(type: "submit", class: "btn-search") do %>
+    <i class="fas fa-search"></i> Search
+  <% end %>
+</div>
 <% end %>
