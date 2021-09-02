@@ -8,12 +8,21 @@ class VinylsController < ApplicationController
   end
 
   def index
-    if params[:query].present?
+    if params[:query].present? || params[:genre].present? || params[:condition].present? || params[:order].present?
       sql_query = " \
         vinyls.album_name @@ :query \
         OR vinyls.artist @@ :query \
       "
-      @vinyls = Vinyl.where(sql_query, query: "%#{params[:query]}%")
+      @vinyls = Vinyl.all
+      @vinyls = @vinyls.where(sql_query, query: "%#{params[:query]}%")  if params[:query].present?
+      @vinyls = @vinyls.where(genre: params[:genre]) if params[:genre].present?
+      @vinyls = @vinyls.where(condition: params[:condition]) if params[:condition].present?
+      if params[:order].present? && params[:order] == 'Highest to lowest'
+        @vinyls = @vinyls.order(daily_rate: :desc)  #user choses "Highest to lowest"
+      else
+        @vinyls = @vinyls.order(daily_rate: :asc) #user choses "Lowest to highest"
+      end
+
     else
       @vinyls = Vinyl.all
     end
