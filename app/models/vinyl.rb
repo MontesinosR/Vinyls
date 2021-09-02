@@ -16,4 +16,11 @@ class Vinyl < ApplicationRecord
   validates :genre, inclusion: { in: GENRES }
   validates :condition, inclusion: { in: CONDITION }
 
+  # pg search
+  include PgSearch::Model
+  pg_search_scope :search_by_artist_and_album_name,
+    against: [ :artist, :album_name ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
