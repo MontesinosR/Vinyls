@@ -8,8 +8,12 @@ class VinylsController < ApplicationController
   end
 
   def index
-    if params["query"].present?
-      @vinyls = Vinyl.where("album_name @@ ?", params["query"])
+    if params[:query].present?
+      sql_query = " \
+        vinyls.album_name @@ :query \
+        OR vinyls.artist @@ :query \
+      "
+      @vinyls = Vinyl.where(sql_query, query: "%#{params[:query]}%")
     else
       @vinyls = Vinyl.all
     end

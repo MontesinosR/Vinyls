@@ -10,17 +10,19 @@
   top: 8px;
   bottom: 8px;
   right: 8px;
-  border-radius: 20px;
-  padding: 8px;
+  border-radius: 27px;
+  padding: 11px;
   border: none;
   color: white;
   background-color: #569F85 !important;
+  margin: 1px;
 }
 
 .search-form-control .form-control {
   height: 3.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid #E7E7E7;
+  border-radius: 46px;
 }
 
 .search-form-control .form-control:focus {
