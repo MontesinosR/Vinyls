@@ -1,5 +1,4 @@
 class Vinyl < ApplicationRecord
-
   GENRES = ['Classic Rock', 'Hip-Hop', 'Pop', 'Jazz', 'Disco', 'Reggaeton']
   CONDITION = ['Mint Condition', 'Good', 'Okay', 'Worn']
 
@@ -15,5 +14,8 @@ class Vinyl < ApplicationRecord
   validates :daily_rate, presence: true, numericality: { greater_than: 0 }
   validates :genre, inclusion: { in: GENRES }
   validates :condition, inclusion: { in: CONDITION }
+  validates :address, presence: true
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

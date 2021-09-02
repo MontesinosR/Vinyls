@@ -13,6 +13,12 @@ class VinylsController < ApplicationController
     else
       @vinyls = Vinyl.all
     end
+    @markers = @vinyls.geocoded.map do |vinyl|
+      {
+        lat: vinyl.latitude,
+        lng: vinyl.longitude
+      }
+    end
   end
 
   def new
