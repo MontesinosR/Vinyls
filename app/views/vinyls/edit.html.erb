@@ -14,11 +14,15 @@
       <h3>Rental info</h3>
       <%= f.select :condition, Vinyl::CONDITION, prompt: ' Condition' %>
       <%= f.input :daily_rate, input_html: { class: "price-input" }, label: false, placeholder: "Daily rental rate (€)" %>
-      <%= f.button :submit, "Add vinyl to collection", label_html: { class: "button" } %>
+      <br>
+      <%= f.button :submit, "Add vinyl to collection", label_html: { class: "button-main" } %>
     </div>
   <% end %>
   <%= link_to vinyl_path(@vinyl), method: :delete do %>
-    <div class="button">Delete</div>
+    <div class="button-main">Delete</div>
   <% end %>
 </div>
+ <div class="rotating">
+    <i class="fas fa-compact-disc"></i>
+  </div>
 </div>

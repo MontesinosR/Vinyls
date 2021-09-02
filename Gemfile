@@ -63,7 +63,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Added by Loulou
 gem 'devise'
+gem 'geocoder'
 gem 'pg_search', '~> 2.3.0'
+
 
 #Cloudinary
 gem 'cloudinary', '~> 1.16.0'

@@ -1,6 +1,19 @@
-.wrapper {
-  display: flex;
-  margin: 15px;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+ul {
+  padding:0px;
+}
+
+.card-trip {
+  position: relative;
+  .fa-edit {
+    position: absolute;
+    top: 27px;
+    right: 11px;
+    font-size: 25px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: lightgray;
+  }
+  .fa-edit:hover {
+    color: darkgray;
+  }
 }

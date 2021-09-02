@@ -26,6 +26,12 @@ class VinylsController < ApplicationController
     else
       @vinyls = Vinyl.all
     end
+    @markers = @vinyls.geocoded.map do |vinyl|
+      {
+        lat: vinyl.latitude,
+        lng: vinyl.longitude
+      }
+    end
   end
 
   def new
@@ -36,7 +42,8 @@ class VinylsController < ApplicationController
     @vinyl = Vinyl.new(vinyl_params)
     @vinyl.user = current_user
     if @vinyl.save
-      redirect_to root_path
+      redirect_to user_bookings_path(current_user, anchor: "owned")
+      flash[:notice] = "Vinyl successfully added to your collection"
     else
       render :new
     end
@@ -55,6 +62,9 @@ class VinylsController < ApplicationController
       render :edit
     end
   end
+
+
+
 
   def destroy
     @vinyl = Vinyl.find(params[:id])

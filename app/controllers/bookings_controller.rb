@@ -24,7 +24,9 @@ class BookingsController < ApplicationController
 
     # owned
     #owned
-  @vinyls_owned = Vinyl.where(user_id: current_user)
+
+    @vinyls_owned = Vinyl.where(user_id: current_user)
+
   end
 
   def create
@@ -41,9 +43,19 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    if @booking.save
+      redirect_back fallback_location: root_path
+    else
+      redirect_to vinyl_bookings_path
+    end
+  end
+
 
   private
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :vinyl)
+    params.require(:booking).permit(:start_date, :end_date, :vinyl, :status)
   end
 end

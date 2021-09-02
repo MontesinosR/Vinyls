@@ -1,5 +1,4 @@
 class Vinyl < ApplicationRecord
-
   GENRES = ['Classic Rock', 'Hip-Hop', 'Pop', 'Jazz', 'Disco', 'Reggaeton']
   CONDITION = ['Mint', 'Good', 'Okay', 'Worn']
   PRICE_ORDER = ['Lowest to highest', 'Highest to lowest'] #just for filters, ignore
@@ -16,7 +15,10 @@ class Vinyl < ApplicationRecord
   validates :daily_rate, presence: true, numericality: { greater_than: 0 }
   validates :genre, inclusion: { in: GENRES }
   validates :condition, inclusion: { in: CONDITION }
+  validates :address, presence: true
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
   # pg search
   include PgSearch::Model
   pg_search_scope :search_by_artist_and_album_name,
@@ -24,4 +26,5 @@ class Vinyl < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
 end

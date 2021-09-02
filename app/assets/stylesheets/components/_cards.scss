@@ -39,11 +39,6 @@
 
 }
 
-.map {
-  height: 100vh;
-  position: sticky;
-}
-
 .album-name {
   color: black !important;
   font-size: 16px;
@@ -56,10 +51,9 @@
 // Dashboard cards //
 
 .card-trip {
-  overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 230px;
+  width: 235px;
 }
 
 .card-trip > img {
