@@ -9,6 +9,10 @@
     margin-right: 20px;
     color: black !important;
   }
+  .fas:hover {
+    transform:rotateZ(45deg);
+
+  }
   .avatar {
     margin-right: 20px;
     margin-left: 30px;
@@ -35,11 +39,4 @@
 }
 .navbar-lewagon .navbar-brand img {
   width: 40px;
-}
-
-.nav-link {
-  background-color: #569F85 ;
-  border-radius: 20px;
-  padding: 8px 18px !important;
-  color: white !important;
 }
