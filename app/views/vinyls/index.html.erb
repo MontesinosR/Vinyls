@@ -5,7 +5,6 @@
     <!-- Search bar -->
     <%= render "shared/search" %>
     <%# search bar ends here %>
-
     <h1 class="index-title">Vinyls near you...</h1>
     <!-- Display of index cards -->
     <div class="cards">
@@ -23,7 +22,11 @@
       <% end %>
     </div>
   </div>
-   <div class="map">
-      <img src="http://www.techautos.com/wp-content/uploads/2010/12/Map-City.jpg" alt="map image">
+  <div class="map-container">
+    <div id="map"
+      style="width: 100%;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
+  </div>
 </div>
