@@ -24,7 +24,9 @@ class BookingsController < ApplicationController
 
     # owned
     #owned
-  @vinyls_owned = Vinyl.where(user_id: current_user)
+
+    @vinyls_owned = Vinyl.where(user_id: current_user)
+
   end
 
   def create
