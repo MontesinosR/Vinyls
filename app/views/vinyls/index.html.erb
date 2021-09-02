@@ -1,9 +1,7 @@
 
 <div class="vinyl-wrapper">
-  <!--Hacer que estén en un .container que ocupe 8/12 columns-->
-  <!--Searchbar-->
   <div class="container">
-    <!-- Cambiado el searchbar por el de Alex - Main Page -->
+    <!-- Search bar -->
     <%= simple_form_for :search, url: vinyls_path, method: :get do |f| %>
   <div class="search-form-control form-group">
     <input class="form-control string required" value="<%= params["query"]%> "type="text" name="query" id="search_query" />
@@ -12,23 +10,22 @@
     </button>
   </div>
   <% end %>
-    <h1>Vinyls near you...</h1>
+    <h1 class="index-title">Vinyls near you...</h1>
     <!-- Display of index cards -->
-    <% @vinyls.each do |vinyl| %>
-    <div class="card-vinyl">
-      <img src="https://images-na.ssl-images-amazon.com/images/I/81pe85y7VjL._AC_SL1500_.jpg" />
-      <div class="card-vinyl-info">
-        <!-- Pending merge to test if the path is right -->
-        <h2><%= link_to vinyl.album_name, vinyl_path(vinyl), class: "album-name" %></h2>
-        <p>Artist: <%= vinyl.artist %></p>
-        <p>Description: <%= vinyl.description %></strong> only.</p>
-        <p>Condition: <%= vinyl.condition %></p>
-        <p>Genre: <%= vinyl.genre %></p>
-        <p>Daily rate <%= vinyl.daily_rate %>$</p>
+    <div class="cards">
+      <% @vinyls.each do |vinyl| %>
+      <div class="card-vinyl">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/81pe85y7VjL._AC_SL1500_.jpg" />
+        <div class="card-vinyl-info">
+          <h2><%= link_to vinyl.album_name, vinyl_path(vinyl), class: "album-name" %></h2>
+          <p>Artist: <%= vinyl.artist %></p>
+          <p>Condition: <%= vinyl.condition %></p>
+          <p>Genre: <%= vinyl.genre %></p>
+          <p>Daily rate <%= vinyl.daily_rate %>$</p>
+        </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
-
   </div>
    <div class="map">
       <img src="http://www.techautos.com/wp-content/uploads/2010/12/Map-City.jpg" alt="map image">
