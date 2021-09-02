@@ -14,7 +14,7 @@
       <h3>Rental info</h3>
       <%= f.select :condition, Vinyl::CONDITION, prompt: ' Condition' %>
       <%= f.input :daily_rate, input_html: { class: "price-input" }, label: false, placeholder: "Daily rental rate (€)" %>
-      <%= f.button :submit, "Add vinyl to collection", label_html: { class: "button" } %>
+      <%= f.button :submit, "Add vinyl to collection", class: "button" %>
     </div>
   <% end %>
 </div>
