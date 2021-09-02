@@ -1,24 +1,7 @@
-h1 {
-  position: relative;
-  align-items: center;
-  color: black;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-input {
-  padding: 5px;
-}
-
-.vinyl-wrapper {
-  display: flex;
-  background-color: #F4F4F4;
-
-}
-
-.container {
-  max-width: 1100px;
-  margin: 20px;
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
 }
 
 .card-vinyl {
