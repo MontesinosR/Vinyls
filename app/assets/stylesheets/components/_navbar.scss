@@ -9,9 +9,10 @@
     margin-right: 30px;
     color: black !important;
   }
-  .fas:hover {
-    transform:rotateZ(45deg);
-
+  .navbar-lhs:hover {
+    .fas {
+      transform:rotateZ(45deg);
+    }
   }
   .avatar {
     margin-right: 30px;
@@ -22,9 +23,10 @@
   }
   .nav-link {
     background-color: #569F85 ;
-    border-radius: 20px;
+    border-radius: 27px;
     padding: 8px 18px !important;
     color: white !important;
+    border: 4px solid white;
   }
 }
 .home-nav {
@@ -45,4 +47,14 @@
 }
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-lhs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    font-size: 20px;
+  }
 }

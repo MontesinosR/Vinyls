@@ -31,7 +31,10 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports Mapbox
 import { initMapbox } from '../plugins/init_mapbox';
 
+import { dashboardTabs } from '../functions/dashboard_tabs';
+
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initFlatpickr();
+  dashboardTabs();
 })

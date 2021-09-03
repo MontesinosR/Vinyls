@@ -2,7 +2,7 @@
 <div class="form-container">
   <%= simple_form_for @vinyl do |f| %>
     <div class="form-header">
-      <h2>Edit this vinyl's settins</h2>
+      <h2>Edit this vinyl's listing details</h2>
     </div>
     <div class="form-body">
       <h3>Album info</h3>
@@ -16,11 +16,8 @@
       <%= f.select :condition, Vinyl::CONDITION, prompt: ' Condition' %>
       <%= f.input :daily_rate, input_html: { class: "price-input" }, label: false, placeholder: "Daily rental rate (€)" %>
       <br>
-      <%= f.button :submit, "Add vinyl to collection", label_html: { class: "button-main" } %>
+      <%= f.button :submit, "Save changes", label_html: { class: "button-main" } %>
     </div>
-  <% end %>
-  <%= link_to vinyl_path(@vinyl), method: :delete do %>
-    <div class="button-main">Delete</div>
   <% end %>
 </div>
  <div class="rotating">
