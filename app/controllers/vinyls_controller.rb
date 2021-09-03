@@ -43,7 +43,7 @@ class VinylsController < ApplicationController
     @vinyl = Vinyl.new(vinyl_params)
     @vinyl.user = current_user
     if @vinyl.save
-      redirect_to user_bookings_path(current_user, anchor: "owned")
+      redirect_to user_bookings_path(current_user, anchor: "vinyl-owned")
       flash[:notice] = "Vinyl successfully added to your collection"
     else
       render :new
@@ -57,15 +57,13 @@ class VinylsController < ApplicationController
   def update
     @vinyl = Vinyl.find(params[:id])
     @vinyl.update(vinyl_params)
-    if @vinyl.save
-      render root_path
+    if @vinyl.save!
+      redirect_to user_bookings_path(current_user, anchor: "vinyl-owned")
+      flash[:notice] = "Changes to your listing were successfully saved"
     else
       render :edit
     end
   end
-
-
-
 
   def destroy
     @vinyl = Vinyl.find(params[:id])
