@@ -7,16 +7,16 @@
 
 .search-form-control .btn-search, .btn-search {
   position: absolute;
-  top: 8px;
+  top: 4.5%;
   bottom: 8px;
   right: 8px;
-  height: 52px;
+  height: 45px;
   border-radius: 27px;
   padding: 11px;
   border: none;
   color: white;
   background-color: #569F85 !important;
-  margin: 1px;
+  // margin: 1px;
 }
 
 .search-form-control .form-control {
@@ -45,11 +45,12 @@ button {
 .search-filters-div-index {
   margin-top: 20px;
   padding: 20px;
+  box-shadow: 1px 1px 1px lightgray;
   color: #616060;
   border-radius: 12px;
   display: flex;
   width: 699px;
-  height: 97px;
+  height: 60px;
   align-items: center;
 }
 

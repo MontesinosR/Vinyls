@@ -12,7 +12,6 @@
       <%= select_tag :order, options_for_select(Vinyl::PRICE_ORDER, params[:order] ), prompt: "Price", class: "filter-pill filter-pill-price"%>
     </div>
     <%# search bar ends here %>
-    <h1 class="index-title">Vinyls near you...</h1>
     <!-- Display of index cards -->
     <div class="cards">
       <% @vinyls.each do |vinyl| %>
