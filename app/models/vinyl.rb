@@ -4,7 +4,7 @@ class Vinyl < ApplicationRecord
   PRICE_ORDER = ['Lowest to highest', 'Highest to lowest'] #just for filters, ignore
 
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_one_attached :photo
 
   validates :album_name, presence: true
