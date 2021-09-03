@@ -1,24 +1,25 @@
+require "date"
 class BookingsController < ApplicationController
 
 
   def index
   # bought
     # pending
-    @bookings_bought_pending = Booking.where(user_id: current_user, status: "Pending")
+    @bookings_bought_pending = Booking.where(user_id: current_user, status: "Pending").where("end_date > ?", Date.today)
     # upcoming
-    @bookings_bought_upcoming = Booking.where(user_id: current_user, status: "Upcoming")
+    @bookings_bought_upcoming = Booking.where(user_id: current_user, status: "Upcoming").where("end_date > ?", Date.today)
     # past
-    @bookings_bought_completed = Booking.where(user_id: current_user, status: "Completed")
+    @bookings_bought_completed = Booking.where(user_id: current_user).where("end_date < ?", Date.today)
     # cancelled
     @bookings_bought_cancelled = Booking.where(user_id: current_user, status: "Cancelled")
 
   # sold
     # pending
-    @bookings_sold_pending = current_user.owner_bookings.where(status: "Pending")
+    @bookings_sold_pending = current_user.owner_bookings.where(status: "Pending").where("end_date > ?", Date.today)
     # upcoming
-    @bookings_sold_upcoming = current_user.owner_bookings.where(status: "Upcoming")
+    @bookings_sold_upcoming = current_user.owner_bookings.where(status: "Upcoming").where("end_date > ?", Date.today)
     # past
-    @bookings_sold_completed = current_user.owner_bookings.where(status: "Completed")
+    @bookings_sold_completed = current_user.owner_bookings.where(status: "Completed").where("end_date < ?", Date.today)
     # cancelled
     @bookings_sold_cancelled = current_user.owner_bookings.where(status: "Cancelled")
 
