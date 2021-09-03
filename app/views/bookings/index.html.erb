@@ -16,7 +16,7 @@
   <div class="tab-content" id="vinyl-tabContent">
     <div class="tab-pane fade show active" id="vinyl-bought" role="tabpanel" aria-labelledby="vinyl-bought-tab">
       <h2>Pending</h2>
-      <div class="cards">
+      <div class="cards-dashboard my-3">
         <% @bookings_bought_pending.each do |booking| %>
             <%= link_to vinyl_path(booking.vinyl) do %>
               <div class="card-trip">
@@ -36,7 +36,7 @@
         <% end %>
       </div>
       <h2>Upcoming</h2>
-      <div class="wrapper">
+      <div class="cards-dashboard my-3">
         <% @bookings_bought_upcoming.each do |booking| %>
             <%= link_to vinyl_path(booking.vinyl) do %>
               <div class="card-trip">
@@ -55,7 +55,7 @@
         <% end %>
       </div>
       <h2>Completed</h2>
-        <div class="wrapper">
+        <div class="cards-dashboard my-3">
         <% @bookings_bought_completed.each do |booking| %>
             <%= link_to vinyl_path(booking.vinyl) do %>
               <div class="card-trip">
@@ -74,7 +74,7 @@
         <% end %>
       </div>
       <h2>Cancelled</h2>
-        <div class="wrapper">
+        <div class="cards-dashboard my-3">
         <% @bookings_bought_cancelled.each do |booking| %>
             <%= link_to vinyl_path(booking.vinyl) do %>
               <div class="card-trip">
@@ -95,9 +95,8 @@
     </div>
     <div class="tab-pane fade" id="vinyl-sold" role="tabpanel" aria-labelledby="vinyl-sold-tab">
       <h2>Pending</h2>
-      <div class="wrapper">
+      <div class="cards-dashboard my-3">
         <% @bookings_sold_pending.each do |booking| %>
-
               <div class="card-trip">
                 <img src="https://images-na.ssl-images-amazon.com/images/I/91ksS-ioRpL._SL1500_.jpg" />
                 <div class="card-trip-infos">
@@ -126,7 +125,7 @@
         <% end %>
       </div>
       <h2>Upcoming</h2>
-      <div class="wrapper">
+      <div class="cards-dashboard my-3">
         <% @bookings_sold_upcoming.each do |booking| %>
             <%= link_to vinyl_path(booking.vinyl) do %>
               <div class="card-trip">
@@ -145,7 +144,7 @@
         <% end %>
       </div>
       <h2>Completed</h2>
-        <div class="wrapper">
+        <div class="cards-dashboard my-3">
         <% @bookings_sold_completed.each do |booking| %>
             <%= link_to vinyl_path(booking.vinyl) do %>
               <div class="card-trip">
@@ -164,7 +163,7 @@
         <% end %>
       </div>
       <h2>Cancelled</h2>
-        <div class="wrapper">
+        <div class="cards-dashboard my-3">
           <% @bookings_sold_cancelled.each do |booking| %>
               <%= link_to vinyl_path(booking.vinyl) do %>
                 <div class="card-trip">
@@ -184,29 +183,21 @@
         </div>
     </div>
     <div class="tab-pane fade" id="vinyl-owned" role="tabpanel" aria-labelledby="vinyl-owned-tab">
-      <ul>
-        <div class="cards">
+        <div class="cards-dashboard my-3">
           <% @vinyls_owned.each do |vinyl| %>
-            <%= link_to vinyl_path(vinyl) do %>
-              <!--See how to position it on image && nice display so it is shwon in every image-->
               <div class="card-trip">
-                <%= link_to vinyl_path(vinyl), method: :patch do %>
-                  <i class="far fa-edit"></i>
+                <%= link_to edit_vinyl_path(vinyl) do %>
+                  <i class="fas fa-pen-square"></i>
                 <% end %>
                 <img src="https://images-na.ssl-images-amazon.com/images/I/91ksS-ioRpL._SL1500_.jpg" />
                 <div class="card-trip-infos">
                   <div class="card-trip-text">
                     <h2><strong><%= vinyl.album_name %></strong> by <strong><%= vinyl.artist %></strong></h2>
-                    <!--This does not go here, cut and paste to BOUGHT & SOLD-->
-
-                    <!--END-->
                   </div>
                 </div>
               </div>
-            <% end %>
           <% end %>
         </div>
-      </ul>
     </div>
   </div>
 </div>
