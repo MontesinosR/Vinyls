@@ -68,7 +68,7 @@ class VinylsController < ApplicationController
   def destroy
     @vinyl = Vinyl.find(params[:id])
     @vinyl.destroy
-    redirect_to root_path
+    redirect_to user_bookings_path(current_user, anchor: "vinyl-owned")
   end
 
   def vinyl_params

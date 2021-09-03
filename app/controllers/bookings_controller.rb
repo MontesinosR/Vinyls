@@ -51,7 +51,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
     if @booking.save
-      redirect_back fallback_location: root_path
+      redirect_to user_bookings_path(current_user, anchor: "vinyl-sold")
     else
       redirect_to vinyl_bookings_path
     end
