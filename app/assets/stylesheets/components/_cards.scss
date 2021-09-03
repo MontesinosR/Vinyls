@@ -7,9 +7,28 @@
 
 .cards-dashboard {
     display: grid;
-  grid-gap: 16px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 16px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
+
+  @media only screen and (max-width: 1600px){
+    /*Small smartphones [325px -> 425px]*/
+    .cards-dashboard {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+  @media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+    .cards-dashboard {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+  .cards-dashboard {
+    grid-template-columns: 1fr;
+   }
+}
 .card-vinyl {
   background-color: white;
   overflow: hidden;
@@ -58,7 +77,8 @@
 
 .card-trip {
   background: white;
-  width: 235px;
+  width: 250px;
+  height: 307px;
   position: relative;
   box-shadow: 2px 2px 2px lightgrey;
   border-radius: 15px;
@@ -76,7 +96,7 @@
   }
 }
 
-.card-trip > img {
+.card-trip img {
   height: 200px;
   width: 100%;
   object-fit: cover;
@@ -97,27 +117,73 @@
 .card-trip .card-trip-infos {
   padding: 16px;
   color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  position: relative;
-  height: 100px;
 
+  position: relative;
+  .far {
+    font-size: 35px;
+    margin-right: 10px;
+  }
+  .fas {
+    position: absolute;
+    right: 8px;
+    top: 66px;
+    font-size: 25px;
+    color: lightgray
+  }
+  .fas:hover {
+    color:red;
+    font-size: 32px;
+    transition: 0.2s;
+  }
 }
 
 .booking-info {
-  display: flex;
-  width: 100%;
 
+  width: 100%;
+  position: relative;
   .card-trip-pricing {
     width: 50%;
-    text-align: right;
+    position:absolute;
+    right: -26px;
+    top:25px;
   }
 
   .card-trip-dates {
     width: 50%;
+    position: absolute;
+    top: 10px;
+    right: 104px;
   }
 
+  .accept-decline-sold {
+    display: flex;
+    position: absolute;
+    top: 51px;
+    right: 58px;
+  }
+  .submit-accept-decline-sold{
 
+    padding:0px !important;
+    background-color: transparent !important;
+    border: none !important;
+    margin-left: 5px;
+  }
+  .card-trip-pricing-sold {
+    width: 50%;
+    position:absolute;
+    right: -26px;
+    top:11px;
+  }
+
+  .card-trip-dates-sold {
+    width: 50%;
+    position: absolute;
+    top: 11px;
+    right: 104px;
+  }
+
+}
+
+.card-trip-sold {
+  height: 350px !important;
 }
