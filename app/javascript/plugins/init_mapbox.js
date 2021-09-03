@@ -4,7 +4,7 @@ const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: mapElement,
-    style: 'mapbox://styles/montesinos/ckt46rxak0sd017rsj65vwm7z'
+    style: 'mapbox://styles/mapbox/streets-v10'
   });
 };
 
@@ -13,13 +13,10 @@ const addMarkersToMap = (map, markers) => {
     const popup = new mapboxgl.Popup().setHTML(marker.info_window); // add this
 
     // Create a HTML element for your custom marker
-    const element = document.createElement('div');
-    element.className = 'marker';
-    element.style.width = '25px';
-    element.style.height = '25px';
-    element.style.backgroundSize = 'contain';
+    const element = document.createElement('i');
+    element.className = "fas fa-compact-disc"
+    element.style.fontSize = "24px";
     element.style.color = '#569F85';
-    element.style.backgroundColor = 'white';
 
     new mapboxgl.Marker(element)
       .setLngLat([marker.lng, marker.lat])
