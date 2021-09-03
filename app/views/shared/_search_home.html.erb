@@ -1,0 +1,25 @@
+
+<%# New %>
+<%= form_tag vinyls_path, method: :get do %>
+<div class = "search-form-control form-group">
+  <div class = "search-bar-div">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a vinyl",
+      value: params[:query]
+    %>
+  </div>
+
+
+    <div class = "search-filters-div-home">
+    <i class="fas fa-sliders-h"></i>
+    <p class = "filters-title"> Filters </p>
+    <%= select_tag :genre, options_for_select(Vinyl::GENRES, selected: params[:genre]), prompt: "Genre", class: "filter-pill filter-pill-genre"  %>
+    <%= select_tag :condition, options_for_select(Vinyl::CONDITION, selected: params[:condition] ), prompt: "Condition", class: "filter-pill filter-pill-condition"%>
+    <%= select_tag :order, options_for_select(Vinyl::PRICE_ORDER, params[:order] ), prompt: "Price", class: "filter-pill filter-pill-price"%>
+    </div>
+
+
+</div>
+<% end %>

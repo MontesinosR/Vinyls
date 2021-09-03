@@ -3,15 +3,7 @@
     <div class="content">
       <h1>On the record</h1>
       <p>Find vinyls to rent near you!</p>
-    <%= render "shared/search" %>
-
-    <div class = "search-filters-div-home">
-    <i class="fas fa-sliders-h"></i>
-    <p class = "filters-title"> Filters </p>
-    <%= select_tag :genre, options_for_select(Vinyl::GENRES, selected: params[:genre]), prompt: "Genre", class: "filter-pill filter-pill-genre"  %>
-    <%= select_tag :condition, options_for_select(Vinyl::CONDITION, selected: params[:condition] ), prompt: "Condition", class: "filter-pill filter-pill-condition"%>
-    <%= select_tag :order, options_for_select(Vinyl::PRICE_ORDER, params[:order] ), prompt: "Price", class: "filter-pill filter-pill-price"%>
-    </div>
+    <%= render "shared/search_home" %>
 
   </div>
 </div>
