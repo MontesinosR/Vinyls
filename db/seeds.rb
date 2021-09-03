@@ -67,3 +67,37 @@ vinyl13.photo.attach(io: URI.open("https://www.rollingstone.com/wp-content/uploa
 vinyl14.photo.attach(io: URI.open("https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-043-A-Tribe-Called-Quest-The-Low-End-Theory.jpg?w=1000"), filename: 'cover.jpg', content_type: 'image/jpg')
 vinyl15.photo.attach(io: URI.open("https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-091-bruce-springsteen-darkness-on-the-edge-of-town.jpg?w=1000"), filename: 'cover.jpg', content_type: 'image/jpg')
 vinyl16.photo.attach(io: URI.open("https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-021-Bruce-Springsteen-BORN-TO-RUN.jpg?w=1000"), filename: 'cover.jpeg', content_type: 'image/jpeg')
+
+vinyl1.address = "Barcelona"
+vinyl2.address = "Madrid"
+vinyl3.address = "Sevilla"
+vinyl4.address = "Pontevedra"
+vinyl5.address = "León"
+vinyl6.address = "Tarragona"
+vinyl7.address = "Reus"
+vinyl8.address = "Asturias"
+vinyl9.address = "Extremadura"
+vinyl10.address = "Huelva"
+vinyl11.address = "Cádiz"
+vinyl12.address = "Córdoba"
+vinyl13.address = "Bilbao"
+vinyl14.address = "Paris"
+vinyl15.address = "Munich"
+vinyl16.address = "Berlin"
+
+vinyl1.save
+vinyl2.save
+vinyl3.save
+vinyl4.save
+vinyl5.save
+vinyl6.save
+vinyl7.save
+vinyl8.save
+vinyl9.save
+vinyl10.save
+vinyl11.save
+vinyl12.save
+vinyl13.save
+vinyl14.save
+vinyl15.save
+vinyl16.save
