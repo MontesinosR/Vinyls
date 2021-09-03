@@ -12,6 +12,7 @@
       <%= f.select :genre, Vinyl::GENRES, prompt: " Genre" %>
       <%= f.input :photo, as: :file, input_html: { class: 'd-none'}, label_html: { class: 'upload-photo'}, label: "  Upload album cover" %>
       <h3>Rental info</h3>
+      <%= f.input :address, label: false, placeholder: "Shipped from (city, country)" %>
       <%= f.select :condition, Vinyl::CONDITION, prompt: ' Condition' %>
       <%= f.input :daily_rate, input_html: { class: "price-input" }, label: false, placeholder: "Daily rental rate (€)" %>
       <br>
