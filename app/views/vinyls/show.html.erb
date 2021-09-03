@@ -8,7 +8,12 @@
     <div class = "info-card">
       <div class = "card-and-title">
         <h3 class = "album-name"><%= @vinyl.album_name %></h3>
-        <img src = "https://images-na.ssl-images-amazon.com/images/I/91ksS-ioRpL._SL1500_.jpg" >
+          <% if @vinyl.photo.attached? %>
+            <%= image_tag @vinyl.photo %>
+          <% else %>
+            <img src="https://res.cloudinary.com/dafu5yrkg/image/upload/v1630417136/homepage_image_tcwzjl.jpg)" alt="record photo placeholder">
+          <% end %>
+        <%# <img src = "https://images-na.ssl-images-amazon.com/images/I/91ksS-ioRpL._SL1500_.jpg" > %>
       </div>
 
       <div class = "info-card-text">
