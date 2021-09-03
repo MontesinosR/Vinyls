@@ -8,7 +8,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :encrypted_password, null: false, default: ""
 
       ## Upload avatar picture
-      t.input :avatar, as: :file
+      #t.input :avatar, as: :file
 
       ## Recoverable
       t.string   :reset_password_token
