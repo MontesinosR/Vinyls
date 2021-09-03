@@ -38,9 +38,12 @@ class BookingsController < ApplicationController
     @booking.vinyl = @vinyl
     @booking.status = "Pending"
     if @booking.save
-      redirect_to user_bookings_path(current_user)
+      redirect_to vinyl_path(@vinyl)
+      flash[:notice] = "You have successfully requested to rent this vinyl"
     else
-      redirect_back fallback_location: vinyl_path(Vinyl.find(params[:id]))
+      redirect_back fallback_location: vinyl_path(@vinyl)
+      flash[:alert] = @booking.errors.full_messages.join(", ").capitalize
+      # why is it not displaying error when I put end date before start date?
     end
   end
 

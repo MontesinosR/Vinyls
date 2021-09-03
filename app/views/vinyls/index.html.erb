@@ -3,8 +3,15 @@
 
     <!-- Search bar -->
     <%= render "shared/search" %>
+
+    <div class = "search-filters-div-index">
+      <i class="fas fa-sliders-h"></i>
+      <p class = "filters-title"> Filters </p>
+      <%= select_tag :genre, options_for_select(Vinyl::GENRES, selected: params[:genre]), prompt: "Genre", class: "filter-pill filter-pill-genre"  %>
+      <%= select_tag :condition, options_for_select(Vinyl::CONDITION, selected: params[:condition] ), prompt: "Condition", class: "filter-pill filter-pill-condition"%>
+      <%= select_tag :order, options_for_select(Vinyl::PRICE_ORDER, params[:order] ), prompt: "Price", class: "filter-pill filter-pill-price"%>
+    </div>
     <%# search bar ends here %>
-    <h1 class="index-title">Vinyls near you...</h1>
     <!-- Display of index cards -->
     <div class="cards">
       <% @vinyls.each do |vinyl| %>

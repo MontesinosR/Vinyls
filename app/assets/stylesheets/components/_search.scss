@@ -7,16 +7,16 @@
 
 .search-form-control .btn-search, .btn-search {
   position: absolute;
-  top: 8px;
+  top: 4.5%;
   bottom: 8px;
   right: 8px;
-  height: 52px;
+  height: 45px;
   border-radius: 27px;
   padding: 11px;
   border: none;
   color: white;
   background-color: #569F85 !important;
-  margin: 1px;
+  // margin: 1px;
 }
 
 .search-form-control .form-control {
@@ -42,23 +42,45 @@ button {
   background-color: none;
 }
 
-.search-filters-div {
+.search-filters-div-index {
   margin-top: 20px;
-  color: #505050;
   padding: 20px;
-  background-color: white;
-  border-radius: 12px;
   box-shadow: 1px 1px 1px lightgray;
+  color: #616060;
+  border-radius: 12px;
   display: flex;
   width: 699px;
-  height: 97px;
+  height: 60px;
   align-items: center;
 }
 
-.search-filters-div p {
+.search-filters-div-home {
+  margin-top: 20px;
+  padding: 20px;
+  color:white;
+  border-radius: 12px;
+  display: flex;
+  width: 699px;
+  align-items: center;
+  background-color: rgba(rgb(137, 137, 137), .4);
+  height: 70px;
+}
+
+.search-filters-div-home .filters-title {
+  color: white !important;
   margin-top: 18px;
   margin-left: 10px;
   margin-right: 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.search-filters-div-index .filters-title {
+  margin-top: 18px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  text-decoration: none;
 }
 
 .filter-pill {
@@ -66,11 +88,17 @@ button {
   text-align: center;
   padding-left: 8px;
   padding-right: 8px;
-  border: 1px solid lightgray;
   border-radius: 24px;
   color: #616060;
   margin: 7px;
+  background-color: white;
+  border: none;
 }
+
+.search-filters-div-index .filter-pill {
+  box-shadow: 1px 1px 1px lightgray;
+}
+
 
 .filter-pill:focus-visible {
   outline: none !important;
