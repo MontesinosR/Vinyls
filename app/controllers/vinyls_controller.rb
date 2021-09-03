@@ -29,7 +29,8 @@ class VinylsController < ApplicationController
     @markers = @vinyls.geocoded.map do |vinyl|
       {
         lat: vinyl.latitude,
-        lng: vinyl.longitude
+        lng: vinyl.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { vinyl: vinyl })
       }
     end
   end
