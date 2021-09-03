@@ -4,17 +4,30 @@ const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: mapElement,
-    style: 'mapbox://styles/mapbox/streets-v10'
+    style: 'mapbox://styles/montesinos/ckt46rxak0sd017rsj65vwm7z'
   });
 };
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    new mapboxgl.Marker()
+    const popup = new mapboxgl.Popup().setHTML(marker.info_window); // add this
+
+    // Create a HTML element for your custom marker
+    const element = document.createElement('div');
+    element.className = 'marker';
+    element.style.width = '25px';
+    element.style.height = '25px';
+    element.style.backgroundSize = 'contain';
+    element.style.color = '#569F85';
+    element.style.backgroundColor = 'white';
+
+    new mapboxgl.Marker(element)
       .setLngLat([marker.lng, marker.lat])
+      .setPopup(popup) // add this
       .addTo(map);
   });
 };
+
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
