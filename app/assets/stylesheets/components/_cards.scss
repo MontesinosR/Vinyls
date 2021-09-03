@@ -21,6 +21,10 @@
   border-radius: 15px;
 }
 
+.card-vinyl h2 {
+  line-height: 0.80rem;
+}
+
 .card-vinyl img {
   height: 185px;
   width: 185px;
@@ -36,7 +40,9 @@
 }
 
 .card-vinyl .card-vinyl-info {
-  padding: 16px;
+  padding: 20px;
+  padding-top: 7px;
+
 }
 
 .album-name {
@@ -45,6 +51,8 @@
   font-weight: bold;
   margin: 0;
 }
+
+
 
 // Dashboard cards //
 

@@ -95,7 +95,7 @@
   color: white !important;
   font-weight: 500;
   border: 1px solid white;
-  width: 200px;
+  width: 100%;
   font-family: "Besley";
   text-align: center;
 }
@@ -103,6 +103,23 @@
 .btn:hover {
   transform: scale(.9, .9);
   box-shadow: inset 2px 2px 6px rgb(74, 74, 74);
+}
+
+.login-alt {
+  margin-top: 4px;
+  color: black;
+  display: flex;
+  width: 200px;
+  justify-content: space-around;
+
+  a {
+    color: black;
+  }
+
+  a:hover {
+    color: #569F85;
+    font-weight: bold;
+  }
 }
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {

@@ -1,4 +1,3 @@
-
 <div class="vinyl-wrapper">
   <div class="container">
 
@@ -9,24 +8,30 @@
     <!-- Display of index cards -->
     <div class="cards">
       <% @vinyls.each do |vinyl| %>
-      <div class="card-vinyl">
-        <img src="https://images-na.ssl-images-amazon.com/images/I/81pe85y7VjL._AC_SL1500_.jpg" />
-        <div class="card-vinyl-info">
-          <h2><%= link_to vinyl.album_name, vinyl_path(vinyl), class: "album-name" %></h2>
-          <p>Artist: <%= vinyl.artist %></p>
-          <p>Condition: <%= vinyl.condition %></p>
-          <p>Genre: <%= vinyl.genre %></p>
-          <p>Daily rate <%= vinyl.daily_rate %>$</p>
+        <div class="card-vinyl">
+          <% if vinyl.photo.attached? %>
+            <%= image_tag vinyl.photo %>
+          <% end %>
+          <div class="card-vinyl-info">
+            <%= link_to vinyl_path(vinyl), class: "album-name" do %>
+              <h2><strong><%=  vinyl.album_name %></strong> <em>by</em> <strong><%= vinyl.artist %></strong></h2>
+              <p>Condition: <%= vinyl.condition %></p>
+              <p>Genre: <%= vinyl.genre %></p>
+              <p>Daily rate: <%= vinyl.daily_rate %>€</p>
+            <% end %>
+          </div>
         </div>
-      </div>
       <% end %>
     </div>
   </div>
+
   <div class="map-container">
     <div id="map"
       style="width: 100%;"
       data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
     </div>
   </div>
+
 </div>
