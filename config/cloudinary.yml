@@ -1,0 +1,18 @@
+development:
+  cloud_name: dafu5yrkg
+  api_key: '748621754939125'
+  api_secret: 67FR_dgvv6agcoSwmUnuWdrpwjk
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dafu5yrkg
+  api_key: '748621754939125'
+  api_secret: 67FR_dgvv6agcoSwmUnuWdrpwjk
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dafu5yrkg
+  api_key: '748621754939125'
+  api_secret: 67FR_dgvv6agcoSwmUnuWdrpwjk
+  enhance_image_tag: true
+  static_file_support: false

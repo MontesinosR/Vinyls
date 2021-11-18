@@ -225,7 +225,6 @@
                 <% end %>
                 <% if vinyl.photo.attached? %>
                     <div style="background-image: linear-gradient(180deg, rgba(0,0,0,0.3984944319524685) 15%, rgba(0,0,0,0.3533788515406162) 42%, rgba(0,0,0,0) 100%), url('<%= cl_image_path vinyl.photo.key %>'); height: 196px; background-size: cover;"></div>
-
                   <%#= image_tag vinyl.photo, style:"background: linear-gradient(180deg, rgba(0,0,0,0.8802871490393032) 15%, rgba(0,0,0,0.3533788515406162) 42%, rgba(0,0,0,0) 100%)" %>
                 <% else %>
                   <div style="background-image: linear-gradient(180deg, rgba(0,0,0,0.3984944319524685) 15%, rgba(0,0,0,0.3533788515406162) 42%, rgba(0,0,0,0) 100%), url(https://res.cloudinary.com/dafu5yrkg/image/upload/v1630417136/homepage_image_tcwzjl.jpg); height: 196px; background-size: cover;"></div>
@@ -234,6 +233,9 @@
                 <div class="card-trip-infos">
                   <div class="card-trip-text">
                     <h2><strong><%= vinyl.album_name %></strong> by <strong><%= vinyl.artist %></strong></h2>
+                    <% if vinyl.photo.attached? %>
+                      <%= link_to "Dowload", rails_blob_path(vinyl.photo, disposition: "attachment")%>
+                    <% end %>
                   </div>
                   <%= link_to vinyl_path(vinyl), method: :delete do %>
                     <i class="fas fa-trash-alt"></i>

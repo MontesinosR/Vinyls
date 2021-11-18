@@ -178,10 +178,11 @@
                   <img src="https://images-na.ssl-images-amazon.com/images/I/91ksS-ioRpL._SL1500_.jpg" />
                   <div class="card-trip-infos">
                     <div class="card-trip-text">
+                      <%= vinyl.photo %>
                       <h2><strong><%= vinyl.album_name %></strong> by <strong><%= vinyl.artist %></strong></h2>
                     </div>
                     <div class="booking-info">
-                      <p class="card-trip-dates"><%= cinyl.booking.start_date %> - <%= vinyl.booking.end_date %></p>
+                      <p class="card-trip-dates"><%= vinyl.booking.start_date %> - <%= vinyl.booking.end_date %></p>
                       <h2 class="card-trip-pricing"> <%= vinyl.daily_rate %> € </h2>
                     </div>
                   </div>
